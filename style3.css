@@ -1,0 +1,70 @@
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+.container{
+  padding: 75px 0;
+  margin: 0 auto;
+  width: 1140px;
+}
+
+h1{
+  position: relative;
+  margin-bottom: 45px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 44px;
+  text-transform: uppercase;
+  color: #424242;
+}
+
+.gallery-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70vh;
+}
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+
+  &:hover{
+    flex: 7;
+  }
+}
+
+.item-1 { 
+  background-image: url('https://media.schoolsites.ca/uploads/535/rio2016olympicfunnyfaces1.jpg');
+}
+
+.item-2 { 
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Carter_vs_Gasol%2C_Lakers_vs_Magic.jpg/640px-Carter_vs_Gasol%2C_Lakers_vs_Magic.jpg');
+}
+
+.item-3 { 
+  background-image: url('https://cdn.britannica.com/27/219927-004-147AD6F9.jpg');
+}
+
+.item-4 { 
+  background-image: url('https://www.northerniowan.com/wp-content/uploads/2017/10/SPORTS_SOC-US-PANAMA_19_OS-900x700.jpg');
+}
+
+.item-5 { 
+  background-image: url('https://img.olympicchannel.com/images/image/private/t_16-9_3200/v1536936974/primary/exvzqcvorticinejmmel');
+}
+
+.social{
+  position: absolute;
+  right: 35px;
+  bottom: 0;
+}
+img{
+  display: block;
+  width: 32px;
+}
+}

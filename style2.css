@@ -1,0 +1,70 @@
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+.container{
+  padding: 75px 0;
+  margin: 0 auto;
+  width: 1140px;
+}
+
+h1{
+  position: relative;
+  margin-bottom: 45px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 44px;
+  text-transform: uppercase;
+  color: #424242;
+}
+
+.gallery-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70vh;
+}
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+
+  &:hover{
+    flex: 7;
+  }
+}
+
+.item-1 { 
+  background-image: url('https://www.lutongbahayrecipe.com/wp-content/uploads/2019/03/lutong-bahay-lechon-pork-belly.jpg');
+}
+
+.item-2 { 
+  background-image: url('https://www.unileverfoodsolutions.com.ph/dam/global-ufs/mcos/SEA/calcmenu/recipes/PH-recipes/appetisers/sizzling-pork-sisig-manila/sizzling-pork-sisig-manila-main.jpg');
+}
+
+.item-3 { 
+  background-image: url('https://www.seriouseats.com/thmb/f3otHqT8FJ9C_ym-BxK_SRi-N8A=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2012__05__20120529-208304-chicken-inasal-9bccb3e5176e430e933579df53957fb7.jpg');
+}
+
+.item-4 { 
+  background-image: url('https://amiablefoods.com/wp-content/uploads/pancit-palabok-600c.jpg');
+}
+
+.item-5 { 
+  background-image: url('https://www.thespruceeats.com/thmb/Syjn-coNic97lGD1YZZmltTSDso=/940x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-125383021-592597fd3df78cbe7e03ca39.jpg');
+}
+
+.social{
+  position: absolute;
+  right: 35px;
+  bottom: 0;
+}
+img{
+  display: block;
+  width: 32px;
+}
+}

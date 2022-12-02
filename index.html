@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<?php session_start()?>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wendell Patual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="wrapper">
+      <div class="logo"><a href="#">Wendell Patual</a></div>
+      <input type="radio" name="slider" id="menu-btn">
+      <input type="radio" name="slider" id="close-btn">
+      <ul class="nav-links">
+        <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+        <li><a href="?pg=home">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li>
+          <a href="#" class="desktop-item">Projects</a>
+          <input type="checkbox" id="showDrop">
+          <label for="showDrop" class="mobile-item">Projects</label>
+          <ul class="drop-menu">
+            <li><a href="Cafe_Menu/index.php">Cafe Menu</a></li>
+            <li><a href="cpa/index.php">C.A.T.S</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="desktop-item">Favorites</a>
+          <input type="checkbox" id="showMega">
+          <label for="showMega" class="mobile-item">Favorites</label>
+          <div class="mega-box">
+            <div class="content">
+              <div class="row">
+                <img src="img.jpg" alt="">
+              </div>
+              <div class="row">
+                <header><a href="?pg=foods">FOODS</a></header>
+                <ul class="mega-links">
+                  <li><a href="?pg=adobo">ADOBO</a></li>
+                  <li><a href="?pg=lpb">LECHON PORK</a></li>
+                  <li><a href="?pg=sps">SIZZLING PORK</a></li>
+                  <li><a href="?pg=chicki">CHIKEN INASAL</a></li>
+                  <li><a href="?pg=pp">PANCIT PALABOK</a></li>
+                </ul>
+              </div>
+              <div class="row">
+                <header><a href="?pg=sports">SPORTS</a></header>
+                <ul class="mega-links">
+                  <li><a href="?pg=soccer">SOCCER</a></li>
+                  <li><a href="?pg=bad">BADMINTON</a></li>
+                  <li><a href="?pg=fh">FIELD HOCKEY</a></li>
+                  <li><a href="?pg=vb">VOLLEYBALL</a></li>
+                  <li><a href="?pg=bb">BASKETBALL</a></li>
+                </ul>
+              </div>   
+            </div>
+          </div>
+        </li>
+        <li><a href="contact/index.php">Contacts</a></li>
+        <li>
+          <?php
+
+    if(!isset($_SESSION['logged_in']))
+      {
+      echo '<a id="sample" href="?pg=login">Login</a><br/>';
+      } else {
+      echo '<a href="?pg=logout">Logout</a><br/>';
+      }
+    ?>
+        </li>
+      </ul>
+      <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>
+
+  <div id="content">
+      <?php
+      if(isset($_GET['pg'])) {
+        $pg = $_GET['pg'];
+        switch($pg){
+          case "foods":
+            include "inc/food.php";
+            break;
+            
+            case "adobo";
+              include "foods/adobo.php";
+              break;
+              
+            case "lpb";
+              include "foods/lechon.php";
+              break;
+
+            case "sps";
+              include "foods/siz.php";
+              break;
+              
+            case "chicki";
+              include "foods/chick.php";
+              break;
+            
+            case "pp";
+              include "foods/pancit.php";
+              break;
+          
+          case "sports":
+            include "inc/sport.php";
+            break;
+            
+            case "soccer";
+              include "sports/soccer.php";
+              break;
+              
+            case "bad";
+              include "sports/badminton.php";
+              break;
+
+            case "fh";
+              include "sports/field.php";
+              break;
+              
+            case "vb";
+              include "sports/volleyball.php";
+              break;
+            
+            case "bb";
+              include "sports/basketball.php";
+              break;
+            
+          default:
+            include "inc/main.php";
+            break;
+          case 'login':
+          include 'login.php';
+          break;
+        case 'logout':
+          include 'logout.php';
+          break;
+          
+        }
+      } else {  
+            include "login.php";
+      }
+      ?>
+    </div>
+</body>
+</html>
